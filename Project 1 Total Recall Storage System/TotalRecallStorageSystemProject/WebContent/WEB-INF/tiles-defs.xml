@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+
+<tiles-definitions>
+
+ 
+    <definition name=".homepageTemplate" path="/pages/layout.jsp">
+        <put name="title"  value="/pages/title.jsp" />
+        <put name="header" value="/pages/header.jsp" />
+        <put name="menu" value="/pages/menu.jsp"/>
+        <put name="footer" value="/pages/footer.jsp" />
+        
+    </definition>
+    
+ <definition name=".login"  extends=".homepageTemplate">
+        <put name="body"   value="/login.jsp" />
+    </definition>  
+
+  
+     <definition name=".success"  extends=".homepageTemplate">
+        <put name="body"   value="/success.jsp" />
+    </definition>  
+
+     <definition name=".failure"  extends=".homepageTemplate">
+        <put name="body"   value="/failure.jsp" />
+    </definition> 
+
+</tiles-definitions>

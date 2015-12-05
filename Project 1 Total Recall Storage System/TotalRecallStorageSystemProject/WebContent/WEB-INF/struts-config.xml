@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor 
+	license agreements. See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership. The ASF licenses this file to 
+	You under the Apache License, Version 2.0 (the "License"); you may not use 
+	this file except in compliance with the License. You may obtain a copy of 
+	the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
+	by applicable law or agreed to in writing, software distributed under the 
+	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
+	OF ANY KIND, either express or implied. See the License for the specific 
+	language governing permissions and limitations under the License. -->
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<!-- This is a blank Struts configuration file with an example welcome action/page 
+	and other commented sample elements. Struts Validator is configured using 
+	the factory defaults and is ready-to-use. NOTE: If you have a generator tool 
+	to create the corresponding Java classes for you, you could include the details 
+	in the "form-bean" declarations. Otherwise, you would only define the "form-bean" 
+	element itself, with the corresponding "name" and "type" attributes, as shown 
+	here. -->
+
+
+<struts-config>
+
+
+	<!-- ================================================ Form Bean Definitions -->
+
+	<form-beans>
+		<form-bean name="loginForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="username" type="java.lang.String"></form-property>
+			<form-property name="password" type="java.lang.String"></form-property>
+			<form-property name="type" type="java.lang.String"></form-property>
+		</form-bean>
+		
+		<form-bean name="managerForm" type="org.apache.struts.validator.DynaValidatorForm">
+		
+		</form-bean>
+		
+		<form-bean name="viewMyUnitsForm" type="org.apache.struts.validator.DynaValidatorForm">
+	
+		</form-bean>
+		<form-bean name="addNewCustomerForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="name" type="java.lang.String"></form-property>
+			<form-property name="email" type="java.lang.String"></form-property>
+			<form-property name="username" type="java.lang.String"></form-property>
+			<form-property name="password" type="java.lang.String"></form-property>
+			<form-property name="type" type="java.lang.String"></form-property>
+		</form-bean>
+		
+		<form-bean name="addNewManagerForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="name" type="java.lang.String"></form-property>
+			<form-property name="email" type="java.lang.String"></form-property>
+			<form-property name="username" type="java.lang.String"></form-property>
+			<form-property name="password" type="java.lang.String"></form-property>
+			<form-property name="type" type="java.lang.String"></form-property>
+		</form-bean>
+		
+		<form-bean name="assignUnitToCustomerForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="custId" type="java.lang.String"></form-property>
+			<form-property name="storageId" type="java.lang.String"></form-property>
+		</form-bean>
+		
+		<form-bean name="vuForm" type="org.apache.struts.validator.DynaValidatorForm">
+		</form-bean>
+		
+		<form-bean name="svForm" type="org.apache.struts.validator.DynaValidatorForm">
+		</form-bean>
+		
+		<form-bean name="sv2Form" type="org.apache.struts.validator.DynaValidatorForm">
+		</form-bean>
+		
+		<form-bean name="mpForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="payment" type="java.lang.String"></form-property>
+		</form-bean>
+		
+		<form-bean name="feedbackForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="feedback" type="java.lang.String"></form-property>
+		</form-bean>
+		
+		<form-bean name="viewStatusForm" type="org.apache.struts.validator.DynaValidatorForm">
+		</form-bean>
+		
+		<form-bean name="statusForm" type="org.apache.struts.validator.DynaValidatorForm">
+		</form-bean>
+		
+		<form-bean name="myBalanceForm" type="org.apache.struts.validator.DynaValidatorForm">
+		</form-bean>
+		<form-bean name="dsForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String"></form-property>
+			<form-property name="type" type="java.lang.String"></form-property>
+		</form-bean>
+		<form-bean name="duForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String"></form-property>
+		</form-bean>
+		<form-bean name="dtForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="id" type="java.lang.String"></form-property>
+		</form-bean>
+		<form-bean name="loAction" type="org.apache.struts.validator.DynaValidatorForm">
+		
+		</form-bean>
+		<!-- sample form bean descriptor for an ActionForm <form-bean name="inputForm" 
+			type="app.InputForm"/> end sample -->
+
+		<!-- sample form bean descriptor for a DynaActionForm <form-bean name="logonForm" 
+			type="org.apache.struts.action.DynaActionForm"> <form-property name="username" 
+			type="java.lang.String"/> <form-property name="password" type="java.lang.String"/> 
+			</form-bean> end sample -->
+	</form-beans>
+
+
+	<!-- ========================================= Global Exception Definitions -->
+
+	<global-exceptions>
+		<!-- sample exception handler <exception key="expired.password" type="app.ExpiredPasswordException" 
+			path="/changePassword.jsp"/> end sample -->
+	</global-exceptions>
+
+
+	<!-- =========================================== Global Forward Definitions -->
+
+	<global-forwards>
+		<!-- Default forward to "Welcome" action -->
+		<!-- Demonstrates using index.jsp to forward -->
+		<forward name="welcome" path="/Welcome.do" />
+	</global-forwards>
+
+
+	<!-- =========================================== Action Mapping Definitions -->
+
+	<action-mappings>
+	 <action path="/login1"
+   			 name="loginForm"
+   			 type="com.eintern.action.LoginAction"
+   			 parameter="type"
+   			 scope="request" 
+   			 validate="true"
+   			 input="/login.jsp">
+   			 
+   			<forward name="c_portal" path="/CustomerPortal.jsp"></forward>
+   			<forward name="m_portal" path="/ManagerPortal.jsp"></forward>
+   			<forward name="failure" path="/failurelogin.jsp"></forward>
+   			 </action>
+   			 
+   		<action path="/m_actions"
+   				name="managerForm"
+   				type="com.eintern.action.ManagerAction"
+   				parameter="manaOpers"
+   				scope="request"
+   				>
+   				
+   				<forward name="go_vct" path="/ViewCustomerTransactions.jsp"></forward>
+   				<forward name="view_all_cust" path="/ViewAllCustomerBalances.jsp"></forward>
+   				<forward name="go_du" path="/SuccessDailyUpdate.jsp"></forward>
+   				<forward name="go_ansu" path="/SuccessAddNewStorage.jsp"></forward>
+   				<forward name="vam" path="/ViewAllManagers.jsp"></forward>
+   				
+   				</action>			
+   				
+   		<action path="/m_units"
+   				name="vuForm"
+   				type="com.eintern.action.ViewUnitsAction"
+   				parameter="view"
+   				scope="request">
+   				
+   				<forward name="go_vAvailable" path="/ViewAvailableUnits.jsp"></forward>
+   				<forward name="go_vAssigned" path="/ViewAssignedUnits.jsp"></forward>
+   				<forward name="go_vAllUnits" path="/ViewAllUnits.jsp"></forward>
+   				</action>
+   				
+   	<action path="/c_toggle"
+   				name="statusForm"
+   				type="com.eintern.action.CustomerStatusAction"
+   				scope="request">
+   				
+   				<forward name="cstatus" path="/CStatus.jsp"></forward>
+   				
+   				</action>
+   				
+   		<action path="/c_toggle0"
+   				name="viewStatusForm"
+   				type="com.eintern.action.ViewStatusAction"
+   				scope="request">
+   				
+   				<forward name="VSA" path="/StatusToggle.jsp"></forward>
+   				
+   				</action>
+   					
+   	<action path="/special_view"
+   				name="svForm"
+   				type="com.eintern.action.ViewUnitsAction"
+   				parameter="va"
+   				scope="request">
+   				
+   				<forward name="go_vAvailable" path="/ViewAvailableUnits.jsp"></forward>
+   				
+   				</action>
+   				
+   	<action path="/special_view2"
+   				name="sv2Form"
+   				type="com.eintern.action.ManagerAction"
+   				parameter="va2"
+   				scope="request">
+   				
+   				<forward name="view_all_cust" path="/ViewAllCustomerBalances.jsp"></forward>
+   				
+   				</action>
+   				
+   						
+   		<action path="/addnewcust"
+   				name="addNewCustomerForm"
+   				type="com.eintern.action.AddNewCustomerAction"
+   				scope="request"
+   				validate="true"
+   				 input="/AddNewCustomer.jsp">
+   				
+   				<forward name="go_addUser" path="/SuccessAddNewCustomer.jsp"></forward>
+   				<forward name="go_addFailed" path="/FailureAddNewCust.jsp"></forward>
+   				</action>
+   				
+   	<action path="/addnewmana"
+   				name="addNewManagerForm"
+   				type="com.eintern.action.AddNewManagerAction"
+   				scope="request"
+   				validate="true"
+   				input="/AddNewManager.jsp">
+   				
+   				<forward name="go_addUser" path="/SuccessAddNewMana.jsp"></forward>
+   				<forward name="go_addFailed" path="/FailureAddNewCust.jsp"></forward>
+   				</action>
+   				
+   		<action path="/c_viewMU"
+   				name="viewMyUnitsForm"
+   				type="com.eintern.action.ViewMyUnitsAction"
+   				scope="request">
+   				
+   				<forward name="go_viewAUSuccess" path="/ViewMyUnits.jsp"></forward>
+   				<forward name="go_viewAUFailure" path="/FailureNoUnits.jsp"></forward>
+   				</action>
+   				
+   		<action path="/m_aucPath"
+   				name="assignUnitToCustomerForm"
+   				type="com.eintern.action.AssignUnitToCustomerAction"
+   				scope="request"
+   				 validate="true"
+   				 input="/AssignUnitToCustomer.jsp">
+   				
+   				<forward name="go_assignUCSuccess" path="/SuccessUnitAssigned.jsp"></forward>
+   				<forward name="go_assignUCFailure" path="/FailureUnitAssigned.jsp"></forward>
+   				<forward name="go_assignUCFailureNotAvailable" path="/FailureUnitAssignedNA.jsp"></forward>
+   				<forward name="go_assignUCFailureNull" path="/FailureUnitAssignedNull.jsp"></forward>
+   				<forward name="not_buying" path="/FailureUnitAssignedNotBuying.jsp"></forward>
+   				</action>
+   				
+   		<action path="/c_makepayment"
+   				name="mpForm"
+   				type="com.eintern.action.MakePaymentAction"
+   				scope="request"
+   				validate="true"
+   				 input="/MakePayment.jsp">
+   				
+   				<forward name="success_payment" path="/SuccessPayment.jsp"></forward>
+   				<forward name="failed_payment" path="/FailedPayment.jsp"></forward>
+   				
+   				</action>
+   		
+   		<action path="/feed_back"
+   				name="feedbackForm"
+   				type="com.eintern.action.FeedbackAction"
+   				scope="request"
+   				validate="true"
+   				input="/Feedback.jsp">
+   				
+   				<forward name="fb" path="/SuccessFeedback.jsp"></forward>
+   				</action>   	
+   				
+   		<action path="/view_balance"
+   				name="myBalanceForm"
+   				type="com.eintern.action.MyBalanceAction"
+   				scope="request">
+   				
+   				<forward name="mb" path="/ViewMyBalance.jsp"></forward>
+   				</action> 			
+   				
+   		<action path="/view_balance"
+   				name="myBalanceForm"
+   				type="com.eintern.action.MyBalanceAction"
+   				scope="request">
+   				
+   				<forward name="mb" path="/ViewMyBalance.jsp"></forward>
+   				</action> 
+   				
+   		<action path="/delete_someone"
+   				name="dsForm"
+   				type="com.eintern.action.DeleteSomeoneAction"
+   				scope="request"
+   				validate="true"
+   				 input="/DeleteSomeone.jsp">
+   				
+   				<forward name="ds" path="/SuccessDeleteSomeone.jsp"></forward>
+   				<forward name="df" path="/DeleteFailed.jsp"></forward>
+   				</action> 
+   				
+   		<action path="/delete_unit"
+   				name="duForm"
+   				type="com.eintern.action.DeleteUnitAction"
+   				scope="request"
+   				validate="true"
+   				 input="/DeleteUnit.jsp">
+   				
+   				<forward name="ds" path="/SuccessDeleteUnit.jsp"></forward>
+   				<forward name="df" path="/DeleteFailed.jsp"></forward>
+   				</action> 
+   				
+   		<action path="/delete_transaction"
+   				name="dtForm"
+   				type="com.eintern.action.DeleteTransactionAction"
+   				scope="request"
+   				validate="true"
+   				 input="/DeleteTransaction.jsp">
+   				
+   				<forward name="ds" path="/SuccessDeleteTransaction.jsp"></forward>
+   				<forward name="df" path="/DeleteFailed.jsp"></forward>
+   				</action> 
+   				
+   		<action path="/logout_action"
+   				name="loAction"
+   				type="com.eintern.action.LogoutAction">
+   				
+   				<forward name="out" path="/login.jsp"></forward>
+   				</action>
+		<!-- Default "Welcome" action -->
+		<!-- Forwards to Welcome.jsp -->
+		<action path="/Welcome" forward="/pages/Welcome.jsp" />
+
+		<!-- sample input and input submit actions <action path="/Input" type="org.apache.struts.actions.ForwardAction" 
+			parameter="/pages/Input.jsp"/> <action path="/InputSubmit" type="app.InputAction" 
+			name="inputForm" scope="request" validate="true" input="/pages/Input.jsp"/> 
+			<action path="/edit*" type="app.Edit{1}Action" name="inputForm" scope="request" 
+			validate="true" input="/pages/Edit{1}.jsp"/> end samples -->
+	</action-mappings>
+
+
+	<!-- ======================================== Message Resources Definitions -->
+
+	<message-resources parameter="MessageResources" />
+
+
+	<!-- =============================================== Plug Ins Configuration -->
+
+	<!-- ======================================================= Tiles plugin -->
+	<!-- This plugin initialize Tiles definition factory. This later can takes 
+		some parameters explained here after. The plugin first read parameters from 
+		web.xml, thenoverload them with parameters defined here. All parameters are 
+		optional. The plugin should be declared in each struts-config file. - definitions-config: 
+		(optional) Specify configuration file names. There can be several comma separated 
+		file names (default: ?? ) - moduleAware: (optional - struts1.1) Specify if 
+		the Tiles definition factory is module aware. If true (default), there will 
+		be one factory for each Struts module. If false, there will be one common 
+		factory for all module. In this later case, it is still needed to declare 
+		one plugin per module. The factory will be initialized with parameters found 
+		in the first initialized plugin (generally the one associated with the default 
+		module). true : One factory per module. (default) false : one single shared 
+		factory for all modules - definitions-parser-validate: (optional) Specify 
+		if xml parser should validate the Tiles configuration file. true : validate. 
+		DTD should be specified in file header (default) false : no validation Paths 
+		found in Tiles definitions are relative to the main context. To use this 
+		plugin, download and add the Tiles jar to your WEB-INF/lib directory then 
+		uncomment the plugin definition below. <plug-in className="org.apache.struts.tiles.TilesPlugin" 
+		> <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" 
+		/> <set-property property="moduleAware" value="true" /> </plug-in> -->
+
+
+	<!-- =================================================== Validator plugin -->
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/org/apache/struts/validator/validator-rules.xml,
+               /WEB-INF/validation.xml" />
+	</plug-in>
+
+</struts-config>
+
